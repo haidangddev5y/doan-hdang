@@ -1,0 +1,120 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\QLTC\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|d:\\\u0111\u1ED3 \u00E1n 1\\\u0111\u1ED3 \u00E1n 1\\\u0111\u1ED3 \u00E1n 1\\\u0111\u1ED3 \u00E1n 1\\qltc\\qltc\\ui\\taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|solutionrelative:qltc\\ui\\taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|d:\\\u0111\u1ED3 \u00E1n 1\\\u0111\u1ED3 \u00E1n 1\\\u0111\u1ED3 \u00E1n 1\\\u0111\u1ED3 \u00E1n 1\\qltc\\qltc\\dal\\tttaikhoandal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|solutionrelative:qltc\\dal\\tttaikhoandal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|d:\\\u0111\u1ED3 \u00E1n 1\\\u0111\u1ED3 \u00E1n 1\\\u0111\u1ED3 \u00E1n 1\\\u0111\u1ED3 \u00E1n 1\\qltc\\qltc\\bus\\tttaikhoanbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|solutionrelative:qltc\\bus\\tttaikhoanbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|d:\\\u0111\u1ED3 \u00E1n 1\\\u0111\u1ED3 \u00E1n 1\\\u0111\u1ED3 \u00E1n 1\\\u0111\u1ED3 \u00E1n 1\\qltc\\qltc\\bus\\taikhoanbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|solutionrelative:qltc\\bus\\taikhoanbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|d:\\\u0111\u1ED3 \u00E1n 1\\\u0111\u1ED3 \u00E1n 1\\\u0111\u1ED3 \u00E1n 1\\\u0111\u1ED3 \u00E1n 1\\qltc\\qltc\\ui\\taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|solutionrelative:qltc\\ui\\taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|d:\\\u0111\u1ED3 \u00E1n 1\\\u0111\u1ED3 \u00E1n 1\\\u0111\u1ED3 \u00E1n 1\\\u0111\u1ED3 \u00E1n 1\\qltc\\qltc\\ui\\danhmuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|solutionrelative:qltc\\ui\\danhmuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TTTaiKhoanDAL.cs",
+              "DocumentMoniker": "D:\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\DAL\\TTTaiKhoanDAL.cs",
+              "RelativeDocumentMoniker": "QLTC\\DAL\\TTTaiKhoanDAL.cs",
+              "ToolTip": "D:\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\DAL\\TTTaiKhoanDAL.cs",
+              "RelativeToolTip": "QLTC\\DAL\\TTTaiKhoanDAL.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T17:04:49.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TTTaiKhoanBUS.cs",
+              "DocumentMoniker": "D:\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\BUS\\TTTaiKhoanBUS.cs",
+              "RelativeDocumentMoniker": "QLTC\\BUS\\TTTaiKhoanBUS.cs",
+              "ToolTip": "D:\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\BUS\\TTTaiKhoanBUS.cs",
+              "RelativeToolTip": "QLTC\\BUS\\TTTaiKhoanBUS.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T17:04:32.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TaiKhoanBUS.cs",
+              "DocumentMoniker": "D:\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\BUS\\TaiKhoanBUS.cs",
+              "RelativeDocumentMoniker": "QLTC\\BUS\\TaiKhoanBUS.cs",
+              "ToolTip": "D:\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\BUS\\TaiKhoanBUS.cs",
+              "RelativeToolTip": "QLTC\\BUS\\TaiKhoanBUS.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T17:04:25.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TaiKhoan.cs",
+              "DocumentMoniker": "D:\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\UI\\TaiKhoan.cs",
+              "RelativeDocumentMoniker": "QLTC\\UI\\TaiKhoan.cs",
+              "ToolTip": "D:\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\UI\\TaiKhoan.cs",
+              "RelativeToolTip": "QLTC\\UI\\TaiKhoan.cs",
+              "ViewState": "AgIAAI4AAABAMzMzMzMywJsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T17:03:56.818Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TaiKhoan.cs [Design]",
+              "DocumentMoniker": "D:\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\UI\\TaiKhoan.cs",
+              "RelativeDocumentMoniker": "QLTC\\UI\\TaiKhoan.cs",
+              "ToolTip": "D:\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\UI\\TaiKhoan.cs [Design]",
+              "RelativeToolTip": "QLTC\\UI\\TaiKhoan.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T17:03:54.058Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DanhMuc.cs [Design]",
+              "DocumentMoniker": "D:\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\UI\\DanhMuc.cs",
+              "RelativeDocumentMoniker": "QLTC\\UI\\DanhMuc.cs",
+              "ToolTip": "D:\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\UI\\DanhMuc.cs [Design]",
+              "RelativeToolTip": "QLTC\\UI\\DanhMuc.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T15:50:01.315Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

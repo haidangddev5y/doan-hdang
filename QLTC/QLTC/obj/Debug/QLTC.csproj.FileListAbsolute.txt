@@ -1,0 +1,69 @@
+D:\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\bin\Debug\QLTC.exe.config
+D:\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\bin\Debug\QLTC.exe
+D:\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\bin\Debug\QLTC.pdb
+D:\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.csproj.AssemblyReference.cache
+D:\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.BaoCao.resources
+D:\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.DanhMuc.resources
+D:\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.GiaoDich.resources
+D:\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.fLogin.resources
+D:\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.QLGiaoDich.resources
+D:\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.QLTaiKhoan.resources
+D:\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.TongQuan.resources
+D:\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.NganSach.resources
+D:\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.Properties.Resources.resources
+D:\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.Registry.resources
+D:\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.TaiKhoan.resources
+D:\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.ThietLapNganSach.resources
+D:\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.ViTien.resources
+D:\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.csproj.GenerateResource.cache
+D:\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.csproj.CoreCompileInputs.cache
+D:\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.exe
+D:\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.pdb
+D:\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.exe.config
+D:\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\bin\Debug\Program.cs
+D:\Learn\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\bin\Debug\Program.cs
+D:\Learn\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\bin\Debug\QLTC.exe.config
+D:\Learn\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\bin\Debug\QLTC.exe
+D:\Learn\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\bin\Debug\QLTC.pdb
+D:\Learn\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.csproj.AssemblyReference.cache
+D:\Learn\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.exe.config
+D:\Learn\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.BaoCao.resources
+D:\Learn\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.DanhMuc.resources
+D:\Learn\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.GiaoDich.resources
+D:\Learn\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.fLogin.resources
+D:\Learn\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.QLGiaoDich.resources
+D:\Learn\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.QLTaiKhoan.resources
+D:\Learn\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.TongQuan.resources
+D:\Learn\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.NganSach.resources
+D:\Learn\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.Properties.Resources.resources
+D:\Learn\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.Registry.resources
+D:\Learn\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.TaiKhoan.resources
+D:\Learn\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.ThietLapNganSach.resources
+D:\Learn\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.ViTien.resources
+D:\Learn\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.csproj.GenerateResource.cache
+D:\Learn\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.csproj.CoreCompileInputs.cache
+D:\Learn\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.exe
+D:\Learn\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.pdb
+D:\Đồ án 1\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\bin\Debug\Program.cs
+D:\Đồ án 1\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\bin\Debug\QLTC.exe.config
+D:\Đồ án 1\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\bin\Debug\QLTC.exe
+D:\Đồ án 1\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\bin\Debug\QLTC.pdb
+D:\Đồ án 1\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.csproj.AssemblyReference.cache
+D:\Đồ án 1\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.exe.config
+D:\Đồ án 1\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.QLTaiKhoan.resources
+D:\Đồ án 1\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.DanhMuc.resources
+D:\Đồ án 1\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.GiaoDich.resources
+D:\Đồ án 1\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.fLogin.resources
+D:\Đồ án 1\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.QLGiaoDich.resources
+D:\Đồ án 1\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.TongQuan.resources
+D:\Đồ án 1\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.NganSach.resources
+D:\Đồ án 1\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.Properties.Resources.resources
+D:\Đồ án 1\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.Registry.resources
+D:\Đồ án 1\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.TaiKhoan.resources
+D:\Đồ án 1\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.ThietLapNganSach.resources
+D:\Đồ án 1\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.ViTien.resources
+D:\Đồ án 1\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.csproj.GenerateResource.cache
+D:\Đồ án 1\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.csproj.CoreCompileInputs.cache
+D:\Đồ án 1\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.exe
+D:\Đồ án 1\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.pdb
+D:\Đồ án 1\Đồ án 1\Đồ án 1\Đồ án 1\QLTC\QLTC\obj\Debug\QLTC.ThongKe.resources
