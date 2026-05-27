@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "D:\\\u0110\u1ED3 \u00E1n 1\\QLTC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|d:\\\u0111\u1ED3 \u00E1n 1\\qltc\\qltc\\dal\\qlgiaodichdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|solutionrelative:qltc\\dal\\qlgiaodichdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|d:\\\u0111\u1ED3 \u00E1n 1\\qltc\\qltc\\ui\\qlgiaodich.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|solutionrelative:qltc\\ui\\qlgiaodich.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|d:\\\u0111\u1ED3 \u00E1n 1\\qltc\\qltc\\ui\\taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|solutionrelative:qltc\\ui\\taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|d:\\\u0111\u1ED3 \u00E1n 1\\qltc\\qltc\\ui\\qlgiaodich.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -22,44 +18,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "QLGiaoDichDAL.cs",
-              "DocumentMoniker": "D:\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\DAL\\QLGiaoDichDAL.cs",
-              "RelativeDocumentMoniker": "QLTC\\DAL\\QLGiaoDichDAL.cs",
-              "ToolTip": "D:\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\DAL\\QLGiaoDichDAL.cs",
-              "RelativeToolTip": "QLTC\\DAL\\QLGiaoDichDAL.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAgwCgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T15:34:09.716Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "QLGiaoDich.cs",
-              "DocumentMoniker": "D:\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\UI\\QLGiaoDich.cs",
-              "RelativeDocumentMoniker": "QLTC\\UI\\QLGiaoDich.cs",
-              "ToolTip": "D:\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\UI\\QLGiaoDich.cs",
-              "RelativeToolTip": "QLTC\\UI\\QLGiaoDich.cs",
-              "ViewState": "AgIAAAMBAAAAAAAAAAAAAAMBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T15:32:41.302Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "QLGiaoDich.cs [Design]",
               "DocumentMoniker": "D:\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\UI\\QLGiaoDich.cs",
               "RelativeDocumentMoniker": "QLTC\\UI\\QLGiaoDich.cs",
               "ToolTip": "D:\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\UI\\QLGiaoDich.cs [Design]",
               "RelativeToolTip": "QLTC\\UI\\QLGiaoDich.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T15:32:38.037Z",
+              "WhenOpened": "2026-05-27T14:43:39.792Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TaiKhoan.cs [Design]",
+              "DocumentMoniker": "D:\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\UI\\TaiKhoan.cs",
+              "RelativeDocumentMoniker": "QLTC\\UI\\TaiKhoan.cs",
+              "ToolTip": "D:\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\UI\\TaiKhoan.cs [Design]",
+              "RelativeToolTip": "QLTC\\UI\\TaiKhoan.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T14:43:36.085Z",
               "EditorCaption": " [Design]"
             }
           ]

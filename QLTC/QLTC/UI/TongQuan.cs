@@ -338,10 +338,9 @@ namespace QLTC
 
         private void btQLTK_Click(object sender, EventArgs e)
         {
-            if (!LaAdmin())
+            if (vaiTro == "Admin")
             {
-                MessageBox.Show("Bạn không có quyền!");
-                return;
+                btQLTK.Visible = false;
             }
 
             QLTaiKhoan f = new QLTaiKhoan();

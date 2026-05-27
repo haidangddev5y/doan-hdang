@@ -9,6 +9,7 @@ namespace QLTC
     {
         private readonly QLNganSachBUS bus = new QLNganSachBUS();
         private readonly int maTK;
+        private bool daCanhBao = false;
 
         private bool isLoaded = false;
 
@@ -62,6 +63,7 @@ namespace QLTC
 
                 HienThiDanhSachNganSach(dt);
                 TinhTongNganSach(dt);
+                CanhBaoNganSach(dt);
             }
             catch (Exception ex)
             {
@@ -77,6 +79,56 @@ namespace QLTC
             FormatDataGridView();
             dgQLNS.Refresh();
         }
+
+        #region CẢNH BÁO NGÂN SÁCH
+
+        private void CanhBaoNganSach(DataTable dt)
+        {
+            if (daCanhBao)
+                return;
+
+            int sapVuot = 0;
+            int daVuot = 0;
+
+            foreach (DataRow row in dt.Rows)
+            {
+                decimal gioiHan = LayGiaTriDecimal(row, "GioiHan");
+                decimal daChi = LayGiaTriDecimal(row, "Chi");
+
+                if (gioiHan <= 0)
+                    continue;
+
+                decimal tyLe = daChi / gioiHan * 100;
+
+                if (tyLe >= 100)
+                    daVuot++;
+                else if (tyLe >= 80)
+                    sapVuot++;
+            }
+
+            if (daVuot > 0)
+            {
+                daCanhBao = true;
+
+                MessageBox.Show(
+                    $"Có {daVuot} danh mục đã vượt ngân sách!",
+                    "Cảnh báo ngân sách",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+            }
+            else if (sapVuot > 0)
+            {
+                MessageBox.Show(
+                    $"Có {sapVuot} danh mục sắp vượt ngân sách!",
+                    "Cảnh báo ngân sách",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+        }
+
+        #endregion
 
         private void FormatDataGridView()
         {

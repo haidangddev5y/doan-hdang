@@ -181,9 +181,9 @@
             this.btXoa.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btXoa.ForeColor = System.Drawing.Color.White;
-            this.btXoa.Location = new System.Drawing.Point(529, 128);
+            this.btXoa.Location = new System.Drawing.Point(529, 125);
             this.btXoa.Name = "btXoa";
-            this.btXoa.Size = new System.Drawing.Size(79, 28);
+            this.btXoa.Size = new System.Drawing.Size(79, 33);
             this.btXoa.TabIndex = 18;
             this.btXoa.Text = "Xóa";
             this.btXoa.UseVisualStyleBackColor = false;
@@ -194,9 +194,9 @@
             this.btSua.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btSua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSua.ForeColor = System.Drawing.Color.White;
-            this.btSua.Location = new System.Drawing.Point(438, 129);
+            this.btSua.Location = new System.Drawing.Point(438, 125);
             this.btSua.Name = "btSua";
-            this.btSua.Size = new System.Drawing.Size(85, 29);
+            this.btSua.Size = new System.Drawing.Size(85, 33);
             this.btSua.TabIndex = 17;
             this.btSua.Text = "Sửa";
             this.btSua.UseVisualStyleBackColor = false;

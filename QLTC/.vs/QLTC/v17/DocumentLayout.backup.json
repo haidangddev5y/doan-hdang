@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\\u0110\u1ED3 \u00E1n 1\\QLTC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|d:\\\u0111\u1ED3 \u00E1n 1\\qltc\\qltc\\dal\\qlgiaodichdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|solutionrelative:qltc\\dal\\qlgiaodichdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|d:\\\u0111\u1ED3 \u00E1n 1\\qltc\\qltc\\ui\\ngansach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|solutionrelative:qltc\\ui\\ngansach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|d:\\\u0111\u1ED3 \u00E1n 1\\qltc\\qltc\\ui\\qlgiaodich.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|solutionrelative:qltc\\ui\\qlgiaodich.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|d:\\\u0111\u1ED3 \u00E1n 1\\qltc\\qltc\\ui\\ngansach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|solutionrelative:qltc\\ui\\ngansach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|d:\\\u0111\u1ED3 \u00E1n 1\\qltc\\qltc\\ui\\qlgiaodich.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|solutionrelative:qltc\\ui\\qlgiaodich.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|d:\\\u0111\u1ED3 \u00E1n 1\\qltc\\qltc\\ui\\thietlapngansach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9BBA5429-FE52-49DC-8274-1EBF3A345BE4}|QLTC\\QLTC.csproj|solutionrelative:qltc\\ui\\thietlapngansach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,39 +27,38 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "QLGiaoDichDAL.cs",
-              "DocumentMoniker": "D:\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\DAL\\QLGiaoDichDAL.cs",
-              "RelativeDocumentMoniker": "QLTC\\DAL\\QLGiaoDichDAL.cs",
-              "ToolTip": "D:\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\DAL\\QLGiaoDichDAL.cs",
-              "RelativeToolTip": "QLTC\\DAL\\QLGiaoDichDAL.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAgwCsAAAAFAAAAAAAAAA==",
+              "Title": "NganSach.cs",
+              "DocumentMoniker": "D:\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\UI\\NganSach.cs",
+              "RelativeDocumentMoniker": "QLTC\\UI\\NganSach.cs",
+              "ToolTip": "D:\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\UI\\NganSach.cs",
+              "RelativeToolTip": "QLTC\\UI\\NganSach.cs",
+              "ViewState": "AgIAAFUAAAAANDMzMzMnwG0AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T15:34:09.716Z",
+              "WhenOpened": "2026-05-27T14:36:32.882Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "QLGiaoDich.cs",
-              "DocumentMoniker": "D:\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\UI\\QLGiaoDich.cs",
-              "RelativeDocumentMoniker": "QLTC\\UI\\QLGiaoDich.cs",
-              "ToolTip": "D:\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\UI\\QLGiaoDich.cs",
-              "RelativeToolTip": "QLTC\\UI\\QLGiaoDich.cs",
-              "ViewState": "AgIAAAMBAAAAAAAAAAAAAAMBAAAAAAAAAAAAAA==",
+              "Title": "NganSach.cs [Design]",
+              "DocumentMoniker": "D:\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\UI\\NganSach.cs",
+              "RelativeDocumentMoniker": "QLTC\\UI\\NganSach.cs",
+              "ToolTip": "D:\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\UI\\NganSach.cs [Design]",
+              "RelativeToolTip": "QLTC\\UI\\NganSach.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T15:32:41.302Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-27T14:13:38.469Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "QLGiaoDich.cs [Design]",
-              "DocumentMoniker": "D:\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\UI\\QLGiaoDich.cs",
-              "RelativeDocumentMoniker": "QLTC\\UI\\QLGiaoDich.cs",
-              "ToolTip": "D:\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\UI\\QLGiaoDich.cs [Design]",
-              "RelativeToolTip": "QLTC\\UI\\QLGiaoDich.cs [Design]",
+              "Title": "ThietLapNganSach.cs [Design]",
+              "DocumentMoniker": "D:\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\UI\\ThietLapNganSach.cs",
+              "RelativeDocumentMoniker": "QLTC\\UI\\ThietLapNganSach.cs",
+              "ToolTip": "D:\\\u0110\u1ED3 \u00E1n 1\\QLTC\\QLTC\\UI\\ThietLapNganSach.cs [Design]",
+              "RelativeToolTip": "QLTC\\UI\\ThietLapNganSach.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T15:32:38.037Z",
+              "WhenOpened": "2026-05-27T14:13:11.111Z",
               "EditorCaption": " [Design]"
             }
           ]

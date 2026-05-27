@@ -40,12 +40,6 @@
             this.btLoc = new System.Windows.Forms.Button();
             this.btThem = new System.Windows.Forms.Button();
             this.dgGD = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lbTC = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lbTT = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btXoa = new System.Windows.Forms.Button();
             this.maGD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noiDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +47,12 @@
             this.danhMuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbTC = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lbTT = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btXoa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgGD)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -153,11 +153,11 @@
             this.btThem.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btThem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btThem.ForeColor = System.Drawing.Color.White;
-            this.btThem.Location = new System.Drawing.Point(633, 96);
+            this.btThem.Location = new System.Drawing.Point(695, 96);
             this.btThem.Name = "btThem";
-            this.btThem.Size = new System.Drawing.Size(137, 35);
+            this.btThem.Size = new System.Drawing.Size(75, 35);
             this.btThem.TabIndex = 10;
-            this.btThem.Text = "+ Thêm giao dịch";
+            this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = false;
             this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
@@ -178,6 +178,51 @@
             this.dgGD.Size = new System.Drawing.Size(749, 208);
             this.dgGD.TabIndex = 11;
             this.dgGD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgGD_CellClick);
+            // 
+            // maGD
+            // 
+            this.maGD.DataPropertyName = "MaGD";
+            this.maGD.HeaderText = "Mã";
+            this.maGD.Name = "maGD";
+            this.maGD.Width = 50;
+            // 
+            // ngay
+            // 
+            this.ngay.DataPropertyName = "Ngay";
+            this.ngay.HeaderText = "Ngày";
+            this.ngay.Name = "ngay";
+            // 
+            // noiDung
+            // 
+            this.noiDung.DataPropertyName = "NoiDung";
+            this.noiDung.HeaderText = "Nội dung";
+            this.noiDung.Name = "noiDung";
+            this.noiDung.Width = 200;
+            // 
+            // loai
+            // 
+            this.loai.DataPropertyName = "Loai";
+            this.loai.HeaderText = "Loại";
+            this.loai.Name = "loai";
+            this.loai.Width = 50;
+            // 
+            // danhMuc
+            // 
+            this.danhMuc.DataPropertyName = "danhMuc";
+            this.danhMuc.HeaderText = "Danh mục";
+            this.danhMuc.Name = "danhMuc";
+            // 
+            // vi
+            // 
+            this.vi.DataPropertyName = "vi";
+            this.vi.HeaderText = "Ví";
+            this.vi.Name = "vi";
+            // 
+            // soTien
+            // 
+            this.soTien.DataPropertyName = "SoTien";
+            this.soTien.HeaderText = "Số tiền";
+            this.soTien.Name = "soTien";
             // 
             // panel1
             // 
@@ -233,58 +278,16 @@
             // 
             // btXoa
             // 
-            this.btXoa.Location = new System.Drawing.Point(567, 96);
+            this.btXoa.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btXoa.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btXoa.ForeColor = System.Drawing.Color.White;
+            this.btXoa.Location = new System.Drawing.Point(625, 96);
             this.btXoa.Name = "btXoa";
-            this.btXoa.Size = new System.Drawing.Size(60, 26);
+            this.btXoa.Size = new System.Drawing.Size(64, 35);
             this.btXoa.TabIndex = 14;
             this.btXoa.Text = "Xóa";
-            this.btXoa.UseVisualStyleBackColor = true;
+            this.btXoa.UseVisualStyleBackColor = false;
             this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
-            // 
-            // maGD
-            // 
-            this.maGD.DataPropertyName = "MaGD";
-            this.maGD.HeaderText = "Mã";
-            this.maGD.Name = "maGD";
-            this.maGD.Width = 50;
-            // 
-            // ngay
-            // 
-            this.ngay.DataPropertyName = "Ngay";
-            this.ngay.HeaderText = "Ngày";
-            this.ngay.Name = "ngay";
-            // 
-            // noiDung
-            // 
-            this.noiDung.DataPropertyName = "NoiDung";
-            this.noiDung.HeaderText = "Nội dung";
-            this.noiDung.Name = "noiDung";
-            this.noiDung.Width = 200;
-            // 
-            // loai
-            // 
-            this.loai.DataPropertyName = "Loai";
-            this.loai.HeaderText = "Loại";
-            this.loai.Name = "loai";
-            this.loai.Width = 50;
-            // 
-            // danhMuc
-            // 
-            this.danhMuc.DataPropertyName = "danhMuc";
-            this.danhMuc.HeaderText = "Danh mục";
-            this.danhMuc.Name = "danhMuc";
-            // 
-            // vi
-            // 
-            this.vi.DataPropertyName = "vi";
-            this.vi.HeaderText = "Ví";
-            this.vi.Name = "vi";
-            // 
-            // soTien
-            // 
-            this.soTien.DataPropertyName = "SoTien";
-            this.soTien.HeaderText = "Số tiền";
-            this.soTien.Name = "soTien";
             // 
             // QLGiaoDich
             // 
