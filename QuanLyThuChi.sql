@@ -863,16 +863,179 @@ BEGIN
     END CATCH
 END
 GO
+-- ===================== SỬA GIAO DỊCH =====================
+CREATE PROC sp_SuaGiaoDich
+    @MaGD INT,
+    @SoTienMoi DECIMAL(18,2),
+    @NgayMoi DATE,
+    @NoiDungMoi NVARCHAR(255),
+    @LoaiMoi INT,
+    @MaDMMoi INT,
+    @MaViMoi INT
+AS
+BEGIN
+    SET NOCOUNT ON;
 
+    BEGIN TRY
+        BEGIN TRAN;
+
+        IF @SoTienMoi <= 0
+        BEGIN
+            RAISERROR(N'Số tiền phải lớn hơn 0!', 16, 1);
+            ROLLBACK TRAN;
+            RETURN;
+        END
+
+        IF @LoaiMoi NOT IN (0, 1)
+        BEGIN
+            RAISERROR(N'Loại giao dịch không hợp lệ!', 16, 1);
+            ROLLBACK TRAN;
+            RETURN;
+        END
+
+        DECLARE 
+            @SoTienCu DECIMAL(18,2),
+            @LoaiCu INT,
+            @MaViCu INT,
+            @SoDuMoi DECIMAL(18,2);
+
+        SELECT 
+            @SoTienCu = SoTien,
+            @LoaiCu = Loai,
+            @MaViCu = MaVi
+        FROM GiaoDich
+        WHERE MaGD = @MaGD;
+
+        IF @SoTienCu IS NULL
+        BEGIN
+            RAISERROR(N'Giao dịch không tồn tại!', 16, 1);
+            ROLLBACK TRAN;
+            RETURN;
+        END
+
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM DanhMuc dm
+            JOIN ViTien vt ON dm.MaTK = vt.MaTK
+            WHERE dm.MaDM = @MaDMMoi
+              AND vt.MaVi = @MaViMoi
+              AND dm.LoaiDM = @LoaiMoi
+        )
+        BEGIN
+            RAISERROR(N'Danh mục không hợp lệ hoặc không cùng tài khoản với ví!', 16, 1);
+            ROLLBACK TRAN;
+            RETURN;
+        END
+
+        -- Hoàn lại tác động của giao dịch cũ
+        IF @LoaiCu = 1
+            UPDATE ViTien SET SoDu = SoDu - @SoTienCu WHERE MaVi = @MaViCu;
+        ELSE
+            UPDATE ViTien SET SoDu = SoDu + @SoTienCu WHERE MaVi = @MaViCu;
+
+        -- Kiểm tra số dư ví mới nếu giao dịch mới là Chi
+        SELECT @SoDuMoi = SoDu
+        FROM ViTien WITH (UPDLOCK, ROWLOCK)
+        WHERE MaVi = @MaViMoi;
+
+        IF @SoDuMoi IS NULL
+        BEGIN
+            RAISERROR(N'Ví không tồn tại!', 16, 1);
+            ROLLBACK TRAN;
+            RETURN;
+        END
+
+        IF @LoaiMoi = 0 AND @SoDuMoi < @SoTienMoi
+        BEGIN
+            RAISERROR(N'Số dư ví không đủ để sửa giao dịch chi!', 16, 1);
+            ROLLBACK TRAN;
+            RETURN;
+        END
+
+        -- Áp dụng tác động của giao dịch mới
+        IF @LoaiMoi = 1
+            UPDATE ViTien SET SoDu = SoDu + @SoTienMoi WHERE MaVi = @MaViMoi;
+        ELSE
+            UPDATE ViTien SET SoDu = SoDu - @SoTienMoi WHERE MaVi = @MaViMoi;
+
+        UPDATE GiaoDich
+        SET 
+            SoTien = @SoTienMoi,
+            Ngay = @NgayMoi,
+            NoiDung = @NoiDungMoi,
+            Loai = @LoaiMoi,
+            MaDM = @MaDMMoi,
+            MaVi = @MaViMoi
+        WHERE MaGD = @MaGD;
+
+        COMMIT TRAN;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0
+            ROLLBACK TRAN;
+
+        THROW;
+    END CATCH
+END
+GO
+-- ===================== XÓA GIAO DỊCH ======================
+CREATE PROC sp_XoaGiaoDich
+    @MaGD INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        BEGIN TRAN;
+
+        DECLARE 
+            @SoTien DECIMAL(18,2),
+            @Loai INT,
+            @MaVi INT;
+
+        SELECT 
+            @SoTien = SoTien,
+            @Loai = Loai,
+            @MaVi = MaVi
+        FROM GiaoDich
+        WHERE MaGD = @MaGD;
+
+        IF @SoTien IS NULL
+        BEGIN
+            RAISERROR(N'Giao dịch không tồn tại!', 16, 1);
+            ROLLBACK TRAN;
+            RETURN;
+        END
+
+        -- Hoàn lại số dư ví trước khi xóa
+        IF @Loai = 1
+            UPDATE ViTien SET SoDu = SoDu - @SoTien WHERE MaVi = @MaVi;
+        ELSE
+            UPDATE ViTien SET SoDu = SoDu + @SoTien WHERE MaVi = @MaVi;
+
+        DELETE FROM GiaoDich
+        WHERE MaGD = @MaGD;
+
+        COMMIT TRAN;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0
+            ROLLBACK TRAN;
+
+        THROW;
+    END CATCH
+END
+GO
 
 -- ===================== LOAD GIAO DỊCH =====================
 
 CREATE PROC sp_LoadGiaoDich
     @TuNgay DATE,
     @DenNgay DATE,
-    @Loai   INT = -1,
-    @MaVi   INT = -1,
-    @MaTK   INT
+    @Loai INT = -1,
+    @MaVi INT = -1,
+    @MaTK INT
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -881,11 +1044,11 @@ BEGIN
         gd.MaGD,
         gd.Ngay,
         gd.NoiDung,
-        CASE 
-            WHEN gd.Loai = 1 THEN N'Thu'
-            ELSE N'Chi'
-        END AS Loai,
+        gd.Loai AS LoaiValue,
+        CASE WHEN gd.Loai = 1 THEN N'Thu' ELSE N'Chi' END AS Loai,
+        dm.MaDM,
         dm.TenDM AS danhMuc,
+        vt.MaVi,
         vt.TenVi AS vi,
         gd.SoTien
     FROM GiaoDich gd
@@ -898,7 +1061,6 @@ BEGIN
     ORDER BY gd.Ngay DESC, gd.MaGD DESC;
 END
 GO
-
 
 /* =========================================================
    6. BUDGET PROCEDURES

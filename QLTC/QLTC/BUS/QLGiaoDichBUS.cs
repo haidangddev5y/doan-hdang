@@ -18,4 +18,12 @@ public class QLGiaoDichBUS
     {
         return dal.LoadVi(maTK);
     }
+
+    public bool Xoa(int maGD)
+    {
+        if (maGD <= 0)
+            throw new Exception("Mã giao dịch không hợp lệ!");
+
+        return dal.Xoa(maGD);
+    }
 }

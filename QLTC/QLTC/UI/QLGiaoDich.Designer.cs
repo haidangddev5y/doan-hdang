@@ -40,17 +40,19 @@
             this.btLoc = new System.Windows.Forms.Button();
             this.btThem = new System.Windows.Forms.Button();
             this.dgGD = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbTC = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lbTT = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btXoa = new System.Windows.Forms.Button();
+            this.maGD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noiDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.danhMuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lbTC = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lbTT = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgGD)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -164,6 +166,7 @@
             this.dgGD.BackgroundColor = System.Drawing.Color.White;
             this.dgGD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgGD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.maGD,
             this.ngay,
             this.noiDung,
             this.loai,
@@ -174,43 +177,7 @@
             this.dgGD.Name = "dgGD";
             this.dgGD.Size = new System.Drawing.Size(749, 208);
             this.dgGD.TabIndex = 11;
-            // 
-            // ngay
-            // 
-            this.ngay.DataPropertyName = "Ngay";
-            this.ngay.HeaderText = "Ngày";
-            this.ngay.Name = "ngay";
-            // 
-            // noiDung
-            // 
-            this.noiDung.DataPropertyName = "NoiDung";
-            this.noiDung.HeaderText = "Nội dung";
-            this.noiDung.Name = "noiDung";
-            this.noiDung.Width = 200;
-            // 
-            // loai
-            // 
-            this.loai.DataPropertyName = "Loai";
-            this.loai.HeaderText = "Loại";
-            this.loai.Name = "loai";
-            // 
-            // danhMuc
-            // 
-            this.danhMuc.DataPropertyName = "danhMuc";
-            this.danhMuc.HeaderText = "Danh mục";
-            this.danhMuc.Name = "danhMuc";
-            // 
-            // vi
-            // 
-            this.vi.DataPropertyName = "vi";
-            this.vi.HeaderText = "Ví";
-            this.vi.Name = "vi";
-            // 
-            // soTien
-            // 
-            this.soTien.DataPropertyName = "SoTien";
-            this.soTien.HeaderText = "Số tiền";
-            this.soTien.Name = "soTien";
+            this.dgGD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgGD_CellClick);
             // 
             // panel1
             // 
@@ -264,12 +231,68 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Tổng thu:";
             // 
+            // btXoa
+            // 
+            this.btXoa.Location = new System.Drawing.Point(567, 96);
+            this.btXoa.Name = "btXoa";
+            this.btXoa.Size = new System.Drawing.Size(60, 26);
+            this.btXoa.TabIndex = 14;
+            this.btXoa.Text = "Xóa";
+            this.btXoa.UseVisualStyleBackColor = true;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
+            // 
+            // maGD
+            // 
+            this.maGD.DataPropertyName = "MaGD";
+            this.maGD.HeaderText = "Mã";
+            this.maGD.Name = "maGD";
+            this.maGD.Width = 50;
+            // 
+            // ngay
+            // 
+            this.ngay.DataPropertyName = "Ngay";
+            this.ngay.HeaderText = "Ngày";
+            this.ngay.Name = "ngay";
+            // 
+            // noiDung
+            // 
+            this.noiDung.DataPropertyName = "NoiDung";
+            this.noiDung.HeaderText = "Nội dung";
+            this.noiDung.Name = "noiDung";
+            this.noiDung.Width = 200;
+            // 
+            // loai
+            // 
+            this.loai.DataPropertyName = "Loai";
+            this.loai.HeaderText = "Loại";
+            this.loai.Name = "loai";
+            this.loai.Width = 50;
+            // 
+            // danhMuc
+            // 
+            this.danhMuc.DataPropertyName = "danhMuc";
+            this.danhMuc.HeaderText = "Danh mục";
+            this.danhMuc.Name = "danhMuc";
+            // 
+            // vi
+            // 
+            this.vi.DataPropertyName = "vi";
+            this.vi.HeaderText = "Ví";
+            this.vi.Name = "vi";
+            // 
+            // soTien
+            // 
+            this.soTien.DataPropertyName = "SoTien";
+            this.soTien.HeaderText = "Số tiền";
+            this.soTien.Name = "soTien";
+            // 
             // QLGiaoDich
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Yellow;
             this.ClientSize = new System.Drawing.Size(774, 464);
+            this.Controls.Add(this.btXoa);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgGD);
             this.Controls.Add(this.btThem);
@@ -313,6 +336,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lbTT;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btXoa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maGD;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngay;
         private System.Windows.Forms.DataGridViewTextBoxColumn noiDung;
         private System.Windows.Forms.DataGridViewTextBoxColumn loai;

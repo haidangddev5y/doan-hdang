@@ -56,6 +56,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbTT = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.btExcel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cDanhMuc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cThoiGian)).BeginInit();
@@ -299,12 +300,26 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Tổng thu";
             // 
+            // btExcel
+            // 
+            this.btExcel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btExcel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btExcel.ForeColor = System.Drawing.Color.White;
+            this.btExcel.Location = new System.Drawing.Point(497, 93);
+            this.btExcel.Name = "btExcel";
+            this.btExcel.Size = new System.Drawing.Size(95, 36);
+            this.btExcel.TabIndex = 10;
+            this.btExcel.Text = "Xuất Excel";
+            this.btExcel.UseVisualStyleBackColor = false;
+            this.btExcel.Click += new System.EventHandler(this.btExcel_Click);
+            // 
             // ThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(626, 532);
+            this.Controls.Add(this.btExcel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -356,5 +371,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lbTT;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btExcel;
     }
 }

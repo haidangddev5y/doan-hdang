@@ -31,4 +31,15 @@ public class QLGiaoDichDAL
 
         return DBConnect.ExecuteQuery("sp_LoadVi", p);
     }
+
+    public bool Xoa(int maGD)
+    {
+        SqlParameter[] p =
+        {
+        new SqlParameter("@MaGD", maGD)
+    };
+
+        DBConnect.ExecuteNonQuery("sp_XoaGiaoDich", p);
+        return true;
+    }
 }

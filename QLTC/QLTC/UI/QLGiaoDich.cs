@@ -9,6 +9,8 @@ namespace QLTC
         private readonly QLGiaoDichBUS bus = new QLGiaoDichBUS();
         private readonly int maTK;
 
+        private int maGiaoDich = -1;
+
         public QLGiaoDich(int _maTK)
         {
             InitializeComponent();
@@ -79,6 +81,7 @@ namespace QLTC
 
                 HienThiDanhSachGiaoDich(dt);
                 TinhTongThuChi(dt);
+                ResetChonDong();
             }
             catch (Exception ex)
             {
@@ -92,7 +95,23 @@ namespace QLTC
             dgGD.DataSource = null;
             dgGD.DataSource = dt;
 
+            CauHinhCotAn();
             FormatDataGridView();
+        }
+
+        private void CauHinhCotAn()
+        {
+            if (dgGD.Columns.Contains("maGD"))
+                dgGD.Columns["maGD"].Visible = false;
+
+            if (dgGD.Columns.Contains("maDM"))
+                dgGD.Columns["maDM"].Visible = false;
+
+            if (dgGD.Columns.Contains("maVi"))
+                dgGD.Columns["maVi"].Visible = false;
+
+            if (dgGD.Columns.Contains("loaiValue"))
+                dgGD.Columns["loaiValue"].Visible = false;
         }
 
         private void FormatDataGridView()
@@ -102,6 +121,55 @@ namespace QLTC
 
             if (dgGD.Columns.Contains("ngay"))
                 dgGD.Columns["ngay"].DefaultCellStyle.Format = "dd/MM/yyyy";
+        }
+
+        #endregion
+
+        #region SỰ KIỆN DATAGRIDVIEW
+
+        private void dgGD_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            DataGridViewRow row = dgGD.Rows[e.RowIndex];
+
+            if (!dgGD.Columns.Contains("maGD"))
+            {
+                MessageBox.Show("DataGridView chưa có cột maGD!");
+                return;
+            }
+
+            object value = row.Cells["maGD"].Value;
+
+            if (value == null || value == DBNull.Value)
+            {
+                maGiaoDich = -1;
+                MessageBox.Show("Không lấy được mã giao dịch!");
+                return;
+            }
+
+            maGiaoDich = Convert.ToInt32(value);
+        }
+
+        private bool LayMaGiaoDichDangChon(DataGridViewRow row)
+        {
+            if (!dgGD.Columns.Contains("maGD"))
+            {
+                MessageBox.Show("Không tìm thấy cột mã giao dịch. Kiểm tra DataGridView hoặc sp_LoadGiaoDich!");
+                return false;
+            }
+
+            object value = row.Cells["maGD"].Value;
+
+            if (value == null || value == DBNull.Value)
+            {
+                maGiaoDich = -1;
+                return false;
+            }
+
+            maGiaoDich = Convert.ToInt32(value);
+            return true;
         }
 
         #endregion
@@ -134,6 +202,17 @@ namespace QLTC
             return true;
         }
 
+        private bool KiemTraDaChonGiaoDich(string hanhDong)
+        {
+            if (maGiaoDich == -1)
+            {
+                MessageBox.Show($"Chọn giao dịch cần {hanhDong}!");
+                return false;
+            }
+
+            return true;
+        }
+
         #endregion
 
         #region TÍNH TỔNG
@@ -160,7 +239,7 @@ namespace QLTC
 
         #endregion
 
-        #region LỌC - THÊM GIAO DỊCH
+        #region LỌC - THÊM - XÓA
 
         private void btLoc_Click(object sender, EventArgs e)
         {
@@ -176,6 +255,41 @@ namespace QLTC
             f.ShowDialog();
 
             LoadData();
+        }
+
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+            if (!KiemTraDaChonGiaoDich("xóa"))
+                return;
+
+            DialogResult result = MessageBox.Show(
+                "Bạn có chắc muốn xóa giao dịch này không?\nSố dư ví sẽ được hoàn lại tương ứng.",
+                "Xác nhận xóa",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result != DialogResult.Yes)
+                return;
+
+            try
+            {
+                bool kq = bus.Xoa(maGiaoDich);
+
+                if (kq)
+                {
+                    MessageBox.Show("Xóa giao dịch thành công!");
+                    LoadData();
+                }
+                else
+                {
+                    MessageBox.Show("Xóa giao dịch thất bại!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi xóa giao dịch: " + ex.Message);
+            }
         }
 
         #endregion
@@ -207,6 +321,12 @@ namespace QLTC
         private string DinhDangTien(decimal soTien)
         {
             return soTien.ToString("N0") + " đ";
+        }
+
+        private void ResetChonDong()
+        {
+            maGiaoDich = -1;
+            dgGD.ClearSelection();
         }
 
         #endregion

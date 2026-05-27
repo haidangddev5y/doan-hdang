@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Data;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using ClosedXML.Excel;
+using System.IO;
 
 namespace QLTC
 {
@@ -268,6 +271,320 @@ namespace QLTC
             lbTC.Text = DinhDangTien(chi);
             lbCL.Text = DinhDangTien(thu - chi);
         }
+        #endregion
+
+        #region // ================= XUẤT EXCEL ===================
+
+        private void btExcel_Click(object sender, EventArgs e)
+        {
+            XuatExcel();
+        }
+
+        private void XuatExcel()
+        {
+            if (!LayThangNam(out int thang, out int nam))
+                return;
+
+            try
+            {
+                DataTable dtTong = bus.TongThuChi(thang, nam, maTk);
+                DataTable dtTheoNgay = bus.ThongKeTheoNgay(thang, nam, maTk);
+                DataTable dtDanhMuc = bus.ThongKeDanhMuc(thang, nam, maTk);
+
+                if (KhongCoDuLieuXuat(dtTheoNgay, dtDanhMuc))
+                {
+                    MessageBox.Show("Không có dữ liệu để xuất Excel!");
+                    return;
+                }
+
+                SaveFileDialog save = new SaveFileDialog
+                {
+                    Title = "Lưu báo cáo thống kê",
+                    Filter = "Excel Workbook (*.xlsx)|*.xlsx",
+                    FileName = $"BaoCaoThongKe_{thang}_{nam}_{DateTime.Now:yyyyMMdd_HHmmss}.xlsx"
+                };
+
+                if (save.ShowDialog() != DialogResult.OK)
+                    return;
+
+                if (!KiemTraFileDangMo(save.FileName))
+                    return;
+
+                using (XLWorkbook workbook = new XLWorkbook())
+                {
+                    TaoSheetTongHop(workbook, dtTong, thang, nam);
+                    TaoSheetDataTable(workbook, dtTheoNgay, "TheoNgay", "THỐNG KÊ THU CHI THEO NGÀY");
+                    TaoSheetDataTable(workbook, dtDanhMuc, "DanhMuc", "THỐNG KÊ CHI THEO DANH MỤC");
+
+                    workbook.SaveAs(save.FileName);
+                }
+
+                MessageBox.Show("Xuất Excel thành công!\nBạn có thể mở file bằng WPS Spreadsheet.");
+            }
+            catch (UnauthorizedAccessException)
+            {
+                MessageBox.Show("Không có quyền ghi file. Vui lòng chọn thư mục khác!");
+            }
+            catch (IOException)
+            {
+                MessageBox.Show("Không thể ghi file. Có thể file đang được mở bằng WPS!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi xuất Excel: " + ex.Message);
+            }
+        }
+
+        private bool KhongCoDuLieuXuat(DataTable dtTheoNgay, DataTable dtDanhMuc)
+        {
+            bool khongCoTheoNgay = dtTheoNgay == null || dtTheoNgay.Rows.Count == 0;
+            bool khongCoDanhMuc = dtDanhMuc == null || dtDanhMuc.Rows.Count == 0;
+
+            return khongCoTheoNgay && khongCoDanhMuc;
+        }
+
+        private bool KiemTraFileDangMo(string fileName)
+        {
+            if (!File.Exists(fileName))
+                return true;
+
+            try
+            {
+                using (File.Open(fileName, FileMode.Open, FileAccess.ReadWrite, FileShare.None))
+                {
+                }
+
+                return true;
+            }
+            catch
+            {
+                MessageBox.Show("File đang được mở. Hãy đóng file trong WPS rồi thử lại!");
+                return false;
+            }
+        }
+
+        #region SHEET TỔNG HỢP
+
+        private void TaoSheetTongHop(XLWorkbook workbook, DataTable dt, int thang, int nam)
+        {
+            IXLWorksheet ws = workbook.Worksheets.Add("TongHop");
+
+            double tongThu = 0;
+            double tongChi = 0;
+
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                tongThu = LayGiaTriSo(dt.Rows[0], "TongThu");
+                tongChi = LayGiaTriSo(dt.Rows[0], "TongChi");
+            }
+
+            double chenhLech = tongThu - tongChi;
+
+            ws.Cell("A1").Value = "BÁO CÁO THỐNG KÊ THU CHI";
+            ws.Range("A1:B1").Merge();
+
+            ws.Cell("A2").Value = $"Tháng {thang}/{nam}";
+            ws.Range("A2:B2").Merge();
+
+            ws.Cell("A3").Value = $"Ngày xuất: {DateTime.Now:dd/MM/yyyy HH:mm}";
+            ws.Range("A3:B3").Merge();
+
+            ws.Cell("A5").Value = "Chỉ tiêu";
+            ws.Cell("B5").Value = "Giá trị (VNĐ)";
+
+            ws.Cell("A6").Value = "Tổng thu";
+            ws.Cell("B6").Value = tongThu;
+
+            ws.Cell("A7").Value = "Tổng chi";
+            ws.Cell("B7").Value = tongChi;
+
+            ws.Cell("A8").Value = "Chênh lệch";
+            ws.Cell("B8").Value = chenhLech;
+
+            TrangTriTieuDe(ws, 1, 2);
+            TrangTriBang(ws.Range("A5:B8"));
+
+            ws.Range("B6:B8").Style.NumberFormat.Format = "#,##0";
+
+            ws.Cell("A10").Value = "Nhận xét";
+            ws.Cell("B10").Value = TaoNhanXet(tongThu, tongChi);
+
+            TrangTriBang(ws.Range("A10:B10"));
+
+            ws.SheetView.FreezeRows(5);
+            TuDongCanCot(ws);
+        }
+
+        private string TaoNhanXet(double tongThu, double tongChi)
+        {
+            if (tongThu == 0 && tongChi == 0)
+                return "Chưa có dữ liệu thu chi trong kỳ thống kê.";
+
+            if (tongThu > tongChi)
+                return "Tình hình tài chính tích cực.";
+
+            if (tongThu < tongChi)
+                return "Cần kiểm soát chi tiêu tốt hơn.";
+
+            return "Tổng thu và tổng chi đang cân bằng.";
+        }
+
+        #endregion
+
+        #region SHEET DATATABLE
+
+        private void TaoSheetDataTable(XLWorkbook workbook, DataTable dt, string tenSheet, string tieuDe)
+        {
+            IXLWorksheet ws = workbook.Worksheets.Add(tenSheet);
+
+            int soCot = dt == null || dt.Columns.Count == 0 ? 1 : dt.Columns.Count;
+
+            ws.Cell(1, 1).Value = tieuDe;
+            ws.Range(1, 1, 1, soCot).Merge();
+
+            TrangTriTieuDe(ws, 1, soCot);
+
+            if (dt == null || dt.Rows.Count == 0)
+            {
+                ws.Cell(3, 1).Value = "Không có dữ liệu";
+                TuDongCanCot(ws);
+                return;
+            }
+
+            for (int c = 0; c < dt.Columns.Count; c++)
+            {
+                ws.Cell(3, c + 1).Value = DoiTenCot(dt.Columns[c].ColumnName);
+            }
+
+            for (int r = 0; r < dt.Rows.Count; r++)
+            {
+                for (int c = 0; c < dt.Columns.Count; c++)
+                {
+                    GanGiaTriCell(ws.Cell(r + 4, c + 1), dt.Rows[r][c]);
+                }
+            }
+
+            IXLRange range = ws.Range(3, 1, dt.Rows.Count + 3, dt.Columns.Count);
+
+            TrangTriBang(range);
+            FormatCotTien(ws, dt);
+
+            ws.SheetView.FreezeRows(3);
+            TuDongCanCot(ws);
+        }
+
+        private void GanGiaTriCell(IXLCell cell, object value)
+        {
+            if (value == null || value == DBNull.Value)
+            {
+                cell.Value = "";
+                return;
+            }
+
+            if (value is int || value is long || value is decimal || value is double || value is float)
+            {
+                cell.SetValue(Convert.ToDouble(value));
+                return;
+            }
+
+            if (value is DateTime)
+            {
+                cell.SetValue(Convert.ToDateTime(value));
+                cell.Style.DateFormat.Format = "dd/MM/yyyy";
+                return;
+            }
+
+            cell.SetValue(value.ToString());
+        }
+
+        private string DoiTenCot(string tenCot)
+        {
+            switch (tenCot)
+            {
+                case "Ngay":
+                    return "Ngày";
+
+                case "ThangNam":
+                    return "Tháng/Năm";
+
+                case "Thu":
+                    return "Tổng thu (VNĐ)";
+
+                case "Chi":
+                    return "Tổng chi (VNĐ)";
+
+                case "TenDM":
+                    return "Danh mục";
+
+                case "TongChi":
+                    return "Tổng chi (VNĐ)";
+
+                default:
+                    return tenCot;
+            }
+        }
+
+        #endregion
+
+        #region ĐỊNH DẠNG EXCEL
+
+        private void TrangTriTieuDe(IXLWorksheet ws, int dong, int soCot)
+        {
+            IXLRange title = ws.Range(dong, 1, dong, soCot);
+
+            title.Style.Font.Bold = true;
+            title.Style.Font.FontSize = 16;
+            title.Style.Font.FontColor = XLColor.White;
+            title.Style.Fill.BackgroundColor = XLColor.FromHtml("#1F4E79");
+            title.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+            title.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+
+            ws.Row(dong).Height = 30;
+        }
+
+        private void TrangTriBang(IXLRange range)
+        {
+            range.Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
+            range.Style.Border.InsideBorder = XLBorderStyleValues.Thin;
+            range.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+
+            IXLRangeRow header = range.FirstRow();
+
+            header.Style.Font.Bold = true;
+            header.Style.Font.FontColor = XLColor.White;
+            header.Style.Fill.BackgroundColor = XLColor.FromHtml("#2C3E50");
+            header.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+        }
+
+        private void FormatCotTien(IXLWorksheet ws, DataTable dt)
+        {
+            for (int c = 0; c < dt.Columns.Count; c++)
+            {
+                string tenCot = dt.Columns[c].ColumnName.ToLower();
+
+                if (tenCot.Contains("thu") ||
+                    tenCot.Contains("chi") ||
+                    tenCot.Contains("tong") ||
+                    tenCot.Contains("sotien"))
+                {
+                    ws.Column(c + 1).Style.NumberFormat.Format = "#,##0";
+                }
+            }
+        }
+
+        private void TuDongCanCot(IXLWorksheet ws)
+        {
+            ws.ColumnsUsed().AdjustToContents();
+
+            foreach (IXLColumn col in ws.ColumnsUsed())
+            {
+                if (col.Width > 45)
+                    col.Width = 45;
+            }
+        }
+
+        #endregion
+
         #endregion
 
         #region        // ===================== HÀM DÙNG CHUNG =====================
